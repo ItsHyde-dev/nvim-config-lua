@@ -15,10 +15,6 @@ return require('packer').startup(function(use)
 
   use({
 	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
   })
 
   use({
@@ -86,5 +82,7 @@ return require('packer').startup(function(use)
           })
       end
   })
-
+  use ('mfussenegger/nvim-dap')
+  use ( "rcarriga/nvim-dap-ui" )
+  use ('leoluz/nvim-dap-go')
 end)
