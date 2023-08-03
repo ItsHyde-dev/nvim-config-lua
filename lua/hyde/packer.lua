@@ -102,6 +102,7 @@ return require('packer').startup(function(use)
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
   }
+  use "avneesh0612/react-nextjs-snippets"
   use {
     "rcarriga/nvim-notify",
     config = function()
