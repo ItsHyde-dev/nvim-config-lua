@@ -3,7 +3,7 @@ require('rose-pine').setup({
 })
 
 function ColorMyPencils(color)
-	color = color or "vim-monokai-tasty"
+	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
 end

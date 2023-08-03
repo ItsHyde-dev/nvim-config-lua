@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
   use("chrisbra/vim-commentary")
   use({
     "kylechui/nvim-surround",
-    tag = "*",   -- Use for stability; omit to use `main` branch for the latest features
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
@@ -91,4 +91,45 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use('prettier/vim-prettier')
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  }
+  use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
+
+  use {
+    "williamboman/mason.nvim",
+    "jay-babu/mason-nvim-dap.nvim",
+  }
+  use {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("notify").setup({
+        background_colour = "#000000",
+      })
+    end
+  }
+  use({
+    "folke/noice.nvim",
+    config = function()
+      require("noice").setup({
+        -- add any options here
+        -- routes = {
+        --   {
+        --     view = "notify",
+        --     filter = { event = "msg_showmode" },
+        --   },
+        -- },
+      })
+    end,
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  })
 end)
