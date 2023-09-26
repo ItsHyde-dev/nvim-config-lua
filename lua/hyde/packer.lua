@@ -106,4 +106,29 @@ return require('packer').startup(function(use)
   use "EdenEast/nightfox.nvim"
   use "folke/twilight.nvim"
   use { "mfussenegger/nvim-jdtls" }
+  use "aserebryakov/vim-todo-lists";
+  use({
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end
+  })
+  use {
+    'laytan/tailwind-sorter.nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+    config = function() require('tailwind-sorter').setup() end,
+    run = 'cd formatter && npm i && npm run build',
+  }
+  use { 'stevearc/dressing.nvim' }
+  use {
+    'code-biscuits/nvim-biscuits',
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+    },
+  }
+  use 'APZelos/blamer.nvim'
 end)
