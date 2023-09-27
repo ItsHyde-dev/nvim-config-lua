@@ -160,4 +160,18 @@ return require('packer').startup(function(use)
     end
   }
   use { 'stevearc/dressing.nvim' }
+  use{
+    'laytan/tailwind-sorter.nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+    config = function() require('tailwind-sorter').setup() end,
+    run = 'cd formatter && npm i && npm run build',
+  }
+  use {
+    'code-biscuits/nvim-biscuits',
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+    },
+  }
+  use 'APZelos/blamer.nvim'
 end)
