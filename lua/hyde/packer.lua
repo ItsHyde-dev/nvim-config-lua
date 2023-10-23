@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
+  use("nvim-treesitter/nvim-treesitter-textobjects");
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -160,7 +161,7 @@ return require('packer').startup(function(use)
     end
   }
   use { 'stevearc/dressing.nvim' }
-  use{
+  use {
     'laytan/tailwind-sorter.nvim',
     requires = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
     config = function() require('tailwind-sorter').setup() end,
@@ -174,4 +175,8 @@ return require('packer').startup(function(use)
     },
   }
   use 'APZelos/blamer.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use "tpope/vim-dadbod"
+  use "kristijanhusak/vim-dadbod-ui"
+  use "kristijanhusak/vim-dadbod-completion"
 end)
