@@ -16,7 +16,7 @@ require("nightfox").setup({
 require("catppuccin").setup({})
 
 function ColorMyPencils(color)
-  color = color or "carbonfox"
+  color = color or "catppuccin-macchiato"
   vim.cmd.colorscheme(color)
 end
 

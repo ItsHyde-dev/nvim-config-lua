@@ -92,11 +92,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use('prettier/vim-prettier')
-  use {
-    "microsoft/vscode-js-debug",
-    opt = true,
-    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-  }
   use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
 
   use {
@@ -179,4 +174,11 @@ return require('packer').startup(function(use)
   use "tpope/vim-dadbod"
   use "kristijanhusak/vim-dadbod-ui"
   use "kristijanhusak/vim-dadbod-completion"
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+}
 end)
