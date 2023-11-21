@@ -13,7 +13,13 @@ require("nightfox").setup({
   }
 })
 
-require("catppuccin").setup({})
+require("gruvbox").setup({
+  transparent_mode = true
+})
+
+require("catppuccin").setup({
+  transparent_background = true,
+})
 
 function ColorMyPencils(color)
   color = color or "catppuccin-macchiato"

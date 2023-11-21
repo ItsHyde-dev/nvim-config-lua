@@ -177,8 +177,9 @@ return require('packer').startup(function(use)
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
-        {"nvim-lua/plenary.nvim"},
-        {"nvim-treesitter/nvim-treesitter"}
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
     }
-}
+  }
+  use { "ellisonleao/gruvbox.nvim" }
 end)
