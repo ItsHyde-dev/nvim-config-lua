@@ -22,7 +22,7 @@ require("catppuccin").setup({
 })
 
 function ColorMyPencils(color)
-  color = color or "catppuccin-macchiato"
+  color = color or "rose-pine"
   vim.cmd.colorscheme(color)
 end
 
