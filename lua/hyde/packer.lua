@@ -183,4 +183,5 @@ return require('packer').startup(function(use)
     }
   }
   use { "ellisonleao/gruvbox.nvim" }
+  use { "windwp/nvim-ts-autotag.nvim" }
 end)
