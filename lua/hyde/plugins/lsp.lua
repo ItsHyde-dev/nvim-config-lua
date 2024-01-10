@@ -70,11 +70,8 @@ return {
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
           vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-          vim.keymap.set({ 'n', 'v' }, '<C-.>', vim.lsp.buf.code_action, opts)
+          vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-          vim.keymap.set('n', '<leader>f', function()
-          vim.lsp.buf.format { async = true }
-          end, opts)
           vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
           vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
           vim.keymap.set('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)

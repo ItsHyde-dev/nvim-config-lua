@@ -14,7 +14,7 @@ return {
         function() require('telescope').extensions.refactoring.refactors() end
       )
 
-      vim.keymap.set("x", "<leader>rr", ":Refactor extract")
+      vim.keymap.set("x", "<leader>rr", ":Refactor extract <CR>")
     end
   }
 }
