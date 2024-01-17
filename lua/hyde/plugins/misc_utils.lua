@@ -8,7 +8,9 @@ return {
   {
     "folke/trouble.nvim",
     config = function()
-      require("trouble").setup {}
+      local trouble = require("trouble")
+      trouble.setup()
+      vim.keymap.set("n", "te", vim.cmd.TroubleToggle)
     end
   },
   {
