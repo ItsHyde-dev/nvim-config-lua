@@ -12,6 +12,16 @@ return {
     end
   },
   {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+    config = function()
+      local tc = require("todo-comments")
+      tc.setup()
+      vim.keymap.set("n", "tl", vim.cmd.TodoTelescope)
+    end
+  },
+  {
     "theprimeagen/harpoon",
     config = function()
       local mark = require("harpoon.mark")
@@ -19,7 +29,6 @@ return {
 
       vim.keymap.set("n", "<leader>a", mark.add_file)
       vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-
     end
   },
   {
@@ -31,20 +40,20 @@ return {
   'aserebryakov/vim-todo-lists',
   'APZelos/blamer.nvim',
   {
-      "Exafunction/codeium.nvim",
-      dependencies = {
-          "nvim-lua/plenary.nvim",
-          "hrsh7th/nvim-cmp",
-      },
-      config = function()
-          require("codeium").setup({})
-          local cmp = require("cmp")
-          cmp.setup({
-            sources = {
-              {name="codeium"}
-            }
-          })
-      end
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({})
+      local cmp = require("cmp")
+      cmp.setup({
+        sources = {
+          { name = "codeium" }
+        }
+      })
+    end
   },
   'Exafunction/codeium.vim',
 }
