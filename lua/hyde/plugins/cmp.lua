@@ -15,7 +15,8 @@ return {
       local cmp = require('cmp')
       cmp.setup({
         sources = {
-          { name = 'codeium' }
+          { name = 'codeium' },
+          { name = 'nvim_lsp' },
         }
       })
     end

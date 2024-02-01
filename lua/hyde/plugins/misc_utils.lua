@@ -57,5 +57,4 @@ return {
       })
     end
   },
-  'Exafunction/codeium.vim',
 }
