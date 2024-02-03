@@ -49,12 +49,6 @@ return {
     },
     config = function()
       require("codeium").setup({})
-      local cmp = require("cmp")
-      cmp.setup({
-        sources = {
-          { name = "codeium" }
-        }
-      })
     end
   },
 }
