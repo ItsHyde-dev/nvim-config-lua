@@ -26,12 +26,38 @@ return {
 
     })
 
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local keymap = vim.keymap -- for conciseness
+
+    local opts = { noremap = true, silent = true }
+    local on_attach = function(client, bufnr)
+      opts.buffer = bufnr
+
+      -- set keybinds
+      keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+      keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+      keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+      keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+      keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+      keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>", opts)
+      keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+      keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+      keymap.set('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+    end
+
+    -- used to enable autocompletion (assign to every lsp server config)
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
     mason_lspconfig.setup_handlers {
       -- The first entry (without a key) will be the default handler
       -- and will be called for each installed server that doesn't have
       -- a dedicated handler.
       function(server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {}
+        require("lspconfig")[server_name].setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+        })
       end,
       -- Next, you can provide a dedicated handler for specific servers.
       -- For example, a handler override for the `rust_analyzer`:
@@ -40,6 +66,6 @@ return {
       -- end
     }
 
-    mason_tool_installer.setup({ })
+    mason_tool_installer.setup({})
   end,
 }
