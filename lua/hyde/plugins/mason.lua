@@ -4,6 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
     -- import mason
@@ -26,7 +27,9 @@ return {
 
     })
 
+    -- LSP Config
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
@@ -48,19 +51,34 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
+<<<<<<< HEAD
+=======
+    local lspconfig = require("lspconfig")
+>>>>>>> 22135a6 (added work laptop changes)
 
     mason_lspconfig.setup_handlers {
       -- The first entry (without a key) will be the default handler
       -- and will be called for each installed server that doesn't have
       -- a dedicated handler.
       function(server_name) -- default handler (optional)
+<<<<<<< HEAD
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
           on_attach = on_attach,
+=======
+        lspconfig[server_name].setup({
+          capabilities = capabilities,
+          on_attach = on_attach
+>>>>>>> 22135a6 (added work laptop changes)
         })
       end,
       -- Next, you can provide a dedicated handler for specific servers.
       -- For example, a handler override for the `rust_analyzer`:
+      lspconfig["tsserver"].setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          files = { "typescript", "javascript", "typescriptreact", "javascriptreact", "json", "html", "css", "scss", "less", "graphql", "markdown", "yaml", "markdown.mdx", "vue", "svelte", "js" },
+      })
       -- ["rust_analyzer"] = function()
       -- require("rust-tools").setup {}
       -- end

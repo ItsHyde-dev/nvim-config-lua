@@ -9,7 +9,7 @@ return {
       require("telescope").load_extension("refactoring")
 
       vim.keymap.set(
-        {"n", "x"},
+        { "n", "x" },
         "<leader>rt",
         function() require('telescope').extensions.refactoring.refactors() end
       )
