@@ -51,25 +51,16 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
-<<<<<<< HEAD
-=======
     local lspconfig = require("lspconfig")
->>>>>>> 22135a6 (added work laptop changes)
 
     mason_lspconfig.setup_handlers {
       -- The first entry (without a key) will be the default handler
       -- and will be called for each installed server that doesn't have
       -- a dedicated handler.
       function(server_name) -- default handler (optional)
-<<<<<<< HEAD
-        require("lspconfig")[server_name].setup({
-          capabilities = capabilities,
-          on_attach = on_attach,
-=======
         lspconfig[server_name].setup({
           capabilities = capabilities,
           on_attach = on_attach
->>>>>>> 22135a6 (added work laptop changes)
         })
       end,
       -- Next, you can provide a dedicated handler for specific servers.
