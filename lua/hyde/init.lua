@@ -1,5 +1,6 @@
 require("hyde.set")
 require("hyde.remap")
+require("hyde.shortcuts")
 
 require("hyde.lazy")
 

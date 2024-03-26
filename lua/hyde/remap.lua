@@ -39,4 +39,4 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", "<cmd>VimTodoListsToggleItem<CR>");
 
-
+vim.keymap.set("n", "<C-g>", "<cmd>:echo expand('%:p')<CR>");
