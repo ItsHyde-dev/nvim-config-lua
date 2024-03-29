@@ -42,7 +42,15 @@ return {
       vim.keymap.set("n", "<leader>fp", "<cmd>PrettierAsync<CR>")
     end
   },
-  'aserebryakov/vim-todo-lists',
+  {
+    'aserebryakov/vim-todo-lists',
+    config = function()
+      vim.g.VimTodoListsCustomKeyMapper = function()
+        vim.keymap.set("n", "<leader><leader>", "<cmd>VimTodoListsToggleItem<CR>");
+        vim.g.VimTodoListsDatesEnabled = 1
+      end
+    end
+  },
   'APZelos/blamer.nvim',
   {
     "Exafunction/codeium.nvim",
