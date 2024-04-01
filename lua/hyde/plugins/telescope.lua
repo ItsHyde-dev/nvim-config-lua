@@ -22,6 +22,7 @@ return {
       })
 
       require('telescope').load_extension('fzf')
+      require('telescope').load_extension('luasnip')
 
       local builtin = require('telescope.builtin')
 
@@ -40,6 +41,7 @@ return {
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})
       vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {})
       vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
+      vim.keymap.set('n', '<leader>ts', builtin.lsp_document_symbols, {})
     end
   }
 }

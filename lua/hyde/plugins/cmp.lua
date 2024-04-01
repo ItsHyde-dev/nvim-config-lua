@@ -1,6 +1,7 @@
 return {
   "kristijanhusak/vim-dadbod-completion",
   "avneesh0612/react-nextjs-snippets",
+  "benfowler/telescope-luasnip.nvim",
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
