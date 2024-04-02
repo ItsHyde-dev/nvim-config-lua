@@ -1,4 +1,7 @@
 return {
+  "Snikimonkd/telescope-git-conflicts.nvim",
+  "nvim-telescope/telescope-frecency.nvim",
+
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build =
@@ -23,6 +26,8 @@ return {
 
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('luasnip')
+      require('telescope').load_extension('frecency')
+      require('telescope').load_extension('conflicts')
 
       local builtin = require('telescope.builtin')
 
@@ -42,6 +47,7 @@ return {
       vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {})
       vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
       vim.keymap.set('n', '<leader>ts', "<cmd>:Telescope luasnip<cr>")
+      vim.keymap.set('n', '<leader>fr', "<cmd>:Telescope frecency<cr>")
     end
   }
 }

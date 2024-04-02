@@ -81,7 +81,7 @@ return {
       type = "server",
       port = "${port}",
       executable = {
-        command = vim.fn.stdpath("data") .. '/mason/bin/dlv',
+        command = 'dlv',
         args = { "dap", "-l", "127.0.0.1:${port}" },
       },
     }
