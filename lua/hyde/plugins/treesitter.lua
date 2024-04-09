@@ -10,7 +10,7 @@ return {
     branch = 'master',
     config = function()
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
+        ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "xml", "http", "json", "graphql" },
         dependencies = {
           "nvim-treesitter/nvim-treesitter-textobjects",
         },
