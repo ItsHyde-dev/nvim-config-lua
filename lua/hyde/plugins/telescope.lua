@@ -1,7 +1,7 @@
 return {
   "Snikimonkd/telescope-git-conflicts.nvim",
   "nvim-telescope/telescope-frecency.nvim",
-
+  "camgraff/telescope-tmux.nvim",
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build =
@@ -24,10 +24,13 @@ return {
         }
       })
 
-      require('telescope').load_extension('fzf')
-      require('telescope').load_extension('luasnip')
-      require('telescope').load_extension('frecency')
-      require('telescope').load_extension('conflicts')
+      local telescope = require('telescope')
+
+      telescope.load_extension('fzf')
+      telescope.load_extension('luasnip')
+      telescope.load_extension('frecency')
+      telescope.load_extension('conflicts')
+      telescope.load_extension('tmux')
 
       local builtin = require('telescope.builtin')
 
