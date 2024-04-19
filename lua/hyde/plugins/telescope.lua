@@ -2,6 +2,7 @@ return {
   "Snikimonkd/telescope-git-conflicts.nvim",
   "nvim-telescope/telescope-frecency.nvim",
   "camgraff/telescope-tmux.nvim",
+  "johmsalas/text-case.nvim",
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build =
@@ -31,6 +32,9 @@ return {
       telescope.load_extension('frecency')
       telescope.load_extension('conflicts')
       telescope.load_extension('tmux')
+      require('textcase').setup()
+      telescope.load_extension('textcase')
+
 
       local builtin = require('telescope.builtin')
 
@@ -48,9 +52,10 @@ return {
 
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})
       vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {})
-      vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
+      vim.keymap.set('n', '<leader>so', builtin.lsp_document_symbols, {})
       vim.keymap.set('n', '<leader>ts', "<cmd>:Telescope luasnip<cr>")
       vim.keymap.set('n', '<leader>;', "<cmd>:Telescope frecency<cr>")
+      vim.keymap.set('n', '<leader>cc', "<cmd>:Telescope textcase<cr>")
     end
   }
 }
