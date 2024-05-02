@@ -1,13 +1,12 @@
 return {
-   {
-     "tpope/vim-dadbod",
-     config = function()
-       vim.keymap.set("n", "<leader>db",
-        function()
-          vim.api.nvim_command("DBUI")
-        end
-      )
-     end
-   },
-   "kristijanhusak/vim-dadbod-ui"
+  {
+    "tpope/vim-dadbod",
+    keys = {
+      { "<leader>db", ":DBUI<CR>", desc = "dadbod ui" },
+    }
+  },
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    cmd="DBUI"
+  }
 }

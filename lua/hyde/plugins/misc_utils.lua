@@ -49,6 +49,7 @@ return {
   },
   {
     'aserebryakov/vim-todo-lists',
+    ft = { "todo" },
     config = function()
       vim.g.VimTodoListsCustomKeyMapper = function()
         vim.keymap.set("n", "<leader><leader>", "<cmd>VimTodoListsToggleItem<CR>");

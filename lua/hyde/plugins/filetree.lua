@@ -1,7 +1,10 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  event="VeryLazy",
-  config=function()
+  keys = {
+    { "<leader><leader>", "<cmd>:NvimTreeToggle<cr>", desc = "open nvim tree", mode = "n" },
+    { "<leader>pv", "<cmd>:NvimTreeFindFile<cr>", desc = "open nvim tree at current file", mode = "n" },
+  },
+  config = function()
     require("nvim-tree").setup({
       view = {
         float = {
@@ -9,7 +12,5 @@ return {
         }
       }
     })
-
-    vim.keymap.set("n", "<leader><leader>", ":NvimTreeToggle<CR>")
   end
 }
