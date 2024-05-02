@@ -2,7 +2,7 @@ return {
   "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    -- "WhoIsSethDaniel/mason-tool-installer.nvim",
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
   },
@@ -12,7 +12,7 @@ return {
 
     -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-    local mason_tool_installer = require("mason-tool-installer")
+-- local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
     mason.setup({})
@@ -65,16 +65,16 @@ return {
       end,
       -- Next, you can provide a dedicated handler for specific servers.
       -- For example, a handler override for the `rust_analyzer`:
-      lspconfig["tsserver"].setup({
-          capabilities = capabilities,
-          on_attach = on_attach,
-          files = { "typescript", "javascript", "typescriptreact", "javascriptreact", "json", "html", "css", "scss", "less", "graphql", "markdown", "yaml", "markdown.mdx", "vue", "svelte", "js" },
-      })
+      -- lspconfig["tsserver"].setup({
+      -- capabilities = capabilities,
+      -- on_attach = on_attach,
+      -- files = { "typescript", "javascript", "typescriptreact", "javascriptreact", "json", "html", "css", "scss", "less", "graphql", "markdown", "yaml", "markdown.mdx", "vue", "svelte", "js" },
+      -- })
       -- ["rust_analyzer"] = function()
       -- require("rust-tools").setup {}
       -- end
     }
 
-    mason_tool_installer.setup({})
+    -- mason_tool_installer.setup({})
   end,
 }

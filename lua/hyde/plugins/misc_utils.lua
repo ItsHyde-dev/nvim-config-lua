@@ -1,12 +1,14 @@
 return {
   {
     "mbbill/undotree",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     end
   },
   {
     "folke/trouble.nvim",
+    event = "VeryLazy",
     config = function()
       local trouble = require("trouble")
       trouble.setup()
@@ -15,6 +17,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
+    event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
     config = function()
@@ -25,6 +28,7 @@ return {
   },
   {
     "theprimeagen/harpoon",
+    event = "VeryLazy",
     config = function()
       local mark = require("harpoon.mark")
       local ui = require("harpoon.ui")
@@ -38,6 +42,7 @@ return {
   },
   {
     'prettier/vim-prettier',
+    ft = { "javascript" },
     config = function()
       vim.keymap.set("n", "<leader>fp", "<cmd>PrettierAsync<CR>")
     end
@@ -52,14 +57,14 @@ return {
     end
   },
   'APZelos/blamer.nvim',
-  {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({})
-    end
-  },
+  -- {
+  -- "Exafunction/codeium.nvim",
+  -- dependencies = {
+  -- "nvim-lua/plenary.nvim",
+  -- "hrsh7th/nvim-cmp",
+  -- },
+  -- config = function()
+  -- require("codeium").setup({})
+  -- end
+  -- },
 }

@@ -1,6 +1,7 @@
 return {
   {
     "folke/zen-mode.nvim",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>zz", function()
         require("zen-mode").setup {
@@ -34,6 +35,7 @@ return {
   'nvim-tree/nvim-web-devicons',
   {
     'nvim-lualine/lualine.nvim',
+    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons'
     },
@@ -48,6 +50,7 @@ return {
   },
   {
     "folke/twilight.nvim",
+    event = "VeryLazy",
     config = function()
       require("twilight").setup({
         dimming = {
@@ -58,6 +61,7 @@ return {
   },
   {
     'code-biscuits/nvim-biscuits',
+    event = "VeryLazy",
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
     },
@@ -81,5 +85,8 @@ return {
       })
     end
   },
-  'stevearc/dressing.nvim',
+  {
+    'stevearc/dressing.nvim',
+    event="VeryLazy"
+  }
 }

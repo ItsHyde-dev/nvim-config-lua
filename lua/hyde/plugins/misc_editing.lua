@@ -1,7 +1,10 @@
 return {
-  "chrisbra/vim-commentary",
+  {
+    "chrisbra/vim-commentary",
+  },
   {
     "kylechui/nvim-surround",
+    event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({})
     end
@@ -12,6 +15,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
+    ft={"javascript"},
     config = function()
       require("nvim-ts-autotag").setup()
     end

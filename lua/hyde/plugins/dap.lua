@@ -4,6 +4,9 @@ return {
   'leoluz/nvim-dap-go',
   {
     'mfussenegger/nvim-dap',
+    keys={
+      {"<leader>d", ":lua require'dapui'.toggle()<CR>", desc="dap ui"},
+    },
     config = function()
       local dap = require('dap')
       require("dapui").setup({
@@ -44,7 +47,6 @@ return {
       require("mason").setup()
 
       vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-      vim.keymap.set("n", "<leader>d", ":lua require'dapui'.toggle()<CR>")
       vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
       vim.keymap.set("n", "<F6>", ":lua require'dap'.step_over()<CR>")
       vim.keymap.set("n", "<F7>", ":lua require'dap'.step_into()<CR>")
@@ -89,5 +91,11 @@ return {
       }
     end
   },
-  { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
+  {
+    "mxsdev/nvim-dap-vscode-js",
+    keys={
+      {"<leader>d", ":lua require'dapui'.toggle()<CR>", desc="dap ui"},
+    },
+    dependencies = { "mfussenegger/nvim-dap" }
+  },
 }

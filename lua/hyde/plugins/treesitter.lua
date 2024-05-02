@@ -10,12 +10,11 @@ return {
     branch = 'master',
     config = function()
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "xml", "http", "json", "graphql" },
+        -- ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "xml", "http", "graphql" },
         dependencies = {
           "nvim-treesitter/nvim-treesitter-textobjects",
         },
-        sync_install = true,
-        auto_install = true,
+        -- sync_install = true,
 
         highlight = {
           enable = true,
@@ -67,7 +66,6 @@ return {
         }
       }
     end
-
   },
-  "nvim-treesitter/playground"
+  -- "nvim-treesitter/playground"
 }

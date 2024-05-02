@@ -1,6 +1,6 @@
 return {
   "Snikimonkd/telescope-git-conflicts.nvim",
-  "nvim-telescope/telescope-frecency.nvim",
+  -- "nvim-telescope/telescope-frecency.nvim",
   "camgraff/telescope-tmux.nvim",
   "johmsalas/text-case.nvim",
   {
@@ -10,9 +10,8 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-
+    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
-
     config = function()
       require('telescope').setup({
         extensions = {
@@ -29,7 +28,7 @@ return {
 
       telescope.load_extension('fzf')
       telescope.load_extension('luasnip')
-      telescope.load_extension('frecency')
+      -- telescope.load_extension('frecency')
       telescope.load_extension('conflicts')
       telescope.load_extension('tmux')
       require('textcase').setup()

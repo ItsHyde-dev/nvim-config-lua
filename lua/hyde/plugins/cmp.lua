@@ -1,5 +1,8 @@
 return {
-  "kristijanhusak/vim-dadbod-completion",
+  {
+    "kristijanhusak/vim-dadbod-completion",
+    cmd = "DBUIToggle"
+  },
   "avneesh0612/react-nextjs-snippets",
   "benfowler/telescope-luasnip.nvim",
   {

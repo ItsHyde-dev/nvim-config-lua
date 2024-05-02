@@ -1,6 +1,9 @@
 return {
   {
     "ThePrimeagen/refactoring.nvim",
+    keys={
+      {"<leader>rr",  ":Refactor extract <CR>", desc="Extract to function", mode="x"}
+    },
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-treesitter/nvim-treesitter" }
@@ -13,8 +16,6 @@ return {
         "<leader>rt",
         function() require('telescope').extensions.refactoring.refactors() end
       )
-
-      vim.keymap.set("x", "<leader>rr", ":Refactor extract <CR>")
     end
   }
 }

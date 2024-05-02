@@ -5,7 +5,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      { "antosha417/nvim-lsp-file-operations", config = true },
+-- { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
       -- Change the Diagnostic symbols in the sign column (gutter)
@@ -22,11 +22,16 @@ return {
   },
   {
     'akinsho/flutter-tools.nvim',
-    lazy = false,
+    ft = { "dart" },
     dependencies = {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = true,
   },
+  {
+    'mfussenegger/nvim-jdtls',
+    config = function()
+    end
+  }
 }
