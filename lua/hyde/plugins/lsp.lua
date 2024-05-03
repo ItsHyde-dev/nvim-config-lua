@@ -1,4 +1,26 @@
 return {
+  -- {
+  -- 'nvim-java/nvim-java',
+  -- ft = { "java" },
+  -- dependencies = {
+  -- 'nvim-java/lua-async-await',
+  -- 'nvim-java/nvim-java-core',
+  -- 'nvim-java/nvim-java-test',
+  -- 'nvim-java/nvim-java-dap',
+  -- 'MunifTanjim/nui.nvim',
+  -- 'neovim/nvim-lspconfig',
+  -- 'mfussenegger/nvim-dap',
+  -- {
+  -- 'williamboman/mason.nvim',
+  -- opts = {
+  -- registries = {
+  -- 'github:nvim-java/mason-registry',
+  -- 'github:mason-org/mason-registry',
+  -- },
+  -- },
+  -- }
+  -- }
+  -- },
   {
     -- LSP
     "neovim/nvim-lspconfig",
@@ -10,6 +32,10 @@ return {
     config = function()
       -- Change the Diagnostic symbols in the sign column (gutter)
       -- (not in youtube nvim video)
+
+      -- for java put this in your path
+      -- export JDTLS_JVM_ARGS="-javaagent:$HOME/java-plugins/lombok.jar -Xbootclasspath/a:$HOME/java-plugins/lombok.jar"
+
       local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
@@ -29,10 +55,8 @@ return {
     },
     config = true,
   },
-  {
-    'mfussenegger/nvim-jdtls',
-    ft = { "java" },
-    config = function()
-    end
-  }
+  -- {
+  -- 'mfussenegger/nvim-jdtls',
+  -- ft = { "java" },
+  -- }
 }

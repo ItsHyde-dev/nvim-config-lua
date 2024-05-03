@@ -12,7 +12,7 @@ return {
 
     -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
--- local mason_tool_installer = require("mason-tool-installer")
+    -- local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
     mason.setup({})
@@ -74,6 +74,8 @@ return {
       -- require("rust-tools").setup {}
       -- end
     }
+
+    -- require('lspconfig').jdtls.setup({})
 
     -- mason_tool_installer.setup({})
   end,
