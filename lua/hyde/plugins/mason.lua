@@ -36,6 +36,14 @@ return {
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
 
+      local autocmd = vim.api.nvim_create_autocmd
+      autocmd('BufWritePost', {
+        pattern = "*",
+        callback = function()
+          vim.lsp.buf.format()
+        end
+      })
+
       -- set keybinds
       keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
       keymap.set('n', 'gd', vim.lsp.buf.definition, opts)

@@ -49,7 +49,7 @@ return {
   },
   {
     'aserebryakov/vim-todo-lists',
-    ft = { "todo" },
+    ft = { "todo", "markdown" },
     config = function()
       vim.g.VimTodoListsCustomKeyMapper = function()
         vim.keymap.set("n", "<leader><leader>", "<cmd>VimTodoListsToggleItem<CR>");
@@ -57,15 +57,5 @@ return {
       end
     end
   },
-  'APZelos/blamer.nvim',
-  -- {
-  -- "Exafunction/codeium.nvim",
-  -- dependencies = {
-  -- "nvim-lua/plenary.nvim",
-  -- "hrsh7th/nvim-cmp",
-  -- },
-  -- config = function()
-  -- require("codeium").setup({})
-  -- end
-  -- },
+  'APZelos/blamer.nvim'
 }

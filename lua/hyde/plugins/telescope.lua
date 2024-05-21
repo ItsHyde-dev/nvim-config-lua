@@ -51,7 +51,7 @@ return {
 
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})
       vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {})
-      vim.keymap.set('n', '<leader>so', builtin.lsp_document_symbols, {})
+      vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
       vim.keymap.set('n', '<leader>ts', "<cmd>:Telescope luasnip<cr>")
       vim.keymap.set('n', '<leader>;', "<cmd>:Telescope frecency<cr>")
       vim.keymap.set('n', '<leader>cc', "<cmd>:Telescope textcase<cr>")
