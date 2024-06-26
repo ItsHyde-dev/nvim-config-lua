@@ -4,7 +4,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- "WhoIsSethDaniel/mason-tool-installer.nvim",
     "neovim/nvim-lspconfig",
-    "nvimdev/lspsaga.nvim",
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
