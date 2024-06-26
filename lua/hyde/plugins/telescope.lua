@@ -41,7 +41,7 @@ return {
       vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
       vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
       vim.keymap.set('n', '<leader>ps', function()
-        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+        builtin.grep_string({ search = vim.fn.input("Search > ") })
       end)
       vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
@@ -53,7 +53,7 @@ return {
       vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {})
       vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
       vim.keymap.set('n', '<leader>ts', "<cmd>:Telescope luasnip<cr>")
-      vim.keymap.set('n', '<leader>;', "<cmd>:Telescope frecency<cr>")
+      -- vim.keymap.set('n', '<leader>;', "<cmd>:Telescope frecency<cr>")
       vim.keymap.set('n', '<leader>cc', "<cmd>:Telescope textcase<cr>")
     end
   }

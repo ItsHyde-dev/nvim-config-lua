@@ -4,6 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- "WhoIsSethDaniel/mason-tool-installer.nvim",
     "neovim/nvim-lspconfig",
+    "nvimdev/lspsaga.nvim",
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
@@ -50,7 +51,11 @@ return {
       keymap.set('n', 'K', vim.lsp.buf.hover, opts)
       keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
       keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-      keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+      keymap.set({ 'n', 'v' }, '<leader>ca', "<cmd>Lspsaga code_action<CR>", opts)
+      keymap.set({ 'n', 'v' }, '<leader>o', "<cmd>Lspsaga outline<CR>", opts)
+      keymap.set({ 'n', 'v' }, '<leader>lf', "<cmd>Lspsaga finder<CR>", opts)
+      keymap.set({ 'n', 'v' }, '<leader>lic', "<cmd>Lspsaga finder<CR>", opts)
+      keymap.set({ 'n', 'v' }, '<leader>loc', "<cmd>Lspsaga finder<CR>", opts)
       keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>", opts)
       keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
       keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
