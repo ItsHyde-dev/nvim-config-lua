@@ -44,6 +44,12 @@ return {
         end
       })
 
+      print("client", client.name)
+
+      if client.name == "tsserver" then
+        vim.keymap.set('n', '<C-p>', require("telescope.builtin").git_files, {})
+      end
+
       -- set keybinds
       keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
       keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
