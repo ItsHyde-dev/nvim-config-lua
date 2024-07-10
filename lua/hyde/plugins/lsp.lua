@@ -48,14 +48,22 @@ return {
   },
   {
     'nvimdev/lspsaga.nvim',
-    event='LspAttach',
+    event = 'LspAttach',
     config = function()
-      require('lspsaga').setup({})
+      require('lspsaga').setup({
+        lightbulb = {
+          enable = false
+        },
+        symbol_in_winbar = {
+          enable = false,
+          hide_keyword = true,
+          delay = 10000
+        }
+      })
     end,
     dependencies = {
-      'nvim-treesitter/nvim-treesitter', -- optional
-      'nvim-tree/nvim-web-devicons',     -- optional
-      'neovim/nvim-lspconfig'            -- to start after lspconfig
+      'nvim-tree/nvim-web-devicons', -- optional
+      'neovim/nvim-lspconfig'        -- to start after lspconfig
     }
   },
   {

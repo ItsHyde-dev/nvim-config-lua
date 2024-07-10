@@ -45,3 +45,5 @@ vim.g.netrw_winsize = 25
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.loaded_matchparen = 1
